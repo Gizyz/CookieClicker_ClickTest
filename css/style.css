@@ -35,9 +35,12 @@ img:active{
     background: url("../bilder/bgV2_dark.png");
     border-left: 10px solid;
 }
-.Cookie-tab h1 {
+.upgradesHeader {
+    position:fixed;
+    width:100%;
     margin: 0;
     padding: 10px;
+    position: fixed;
     color:rgb(255, 238, 238);
     background-color: black;
 }
