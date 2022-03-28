@@ -6,15 +6,18 @@ var oldClick = 0;
 var cookieAmount = 0;
 
 cookie.addEventListener('click', clicker);
+setInterval(function (){cps = 0;cpsEl.innerHTML = cps + " cps"}, 2000);
 
 function clicker() {
     cookieAmount++
     cookiesEl.innerHTML = "You have " + cookieAmount + " cookies"
 
-    cpsEl.innerHTML = clicksPerSecond(Math.floor(Date.now())) + " cps"
+    clicksPerSecond();
 }
-function clicksPerSecond(newClick) {
+function clicksPerSecond() {
+    var newClick = Math.floor(Date.now())
     var cps = (1000/(newClick - oldClick)).toFixed(2);
     oldClick = newClick;
-    return cps;
+  
+    cpsEl.innerHTML = cps + " cps"
 }
