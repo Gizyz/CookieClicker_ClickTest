@@ -2,14 +2,53 @@ html, body {
     margin:0;
     padding:0;
 }
-body {
-    background-color: red;
-    background-image:url("../bilder/bgV2.png");
-
-}
 img {
     width: 500px;
 }
-.menubar {
-    height: 100vh;
+h1 {
+    padding: 10px;
+    color:rgb(255, 238, 238);
+    background-color: black;
 }
+.menubar {
+    position: absolute;
+    height: 100vh;
+    width: 40vw;
+    top: 0;
+    right: 0;
+    background: url("../bilder/bgV2_dark.png");
+    border-left: 10px solid;
+}
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Cookie Cookie Cookie-tab"
+      "Cookie Cookie Cookie-tab"
+      "Cookie Cookie Cookie-tab";
+      height: 100vh;
+  }
+  
+.Cookie-tab { 
+grid-area: Cookie-tab; 
+background: url("../bilder/bgV2_dark.png");
+border-left: 10px solid;}
+
+.Cookie {
+display:flex;
+grid-area: Cookie;
+background:url("../bilder/bgV2.png");
+align-items: center;
+justify-content: center;
+}
+
+.Cookie h1 {
+    position:absolute;
+    width: calc(100% - 34%);    
+    top:0;
+    left:0;
+}
+
