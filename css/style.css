@@ -6,6 +6,7 @@ img {
     width: 500px;
 }
 h1 {
+    margin:0;
     padding: 10px;
     color:rgb(255, 238, 238);
     background-color: black;
@@ -30,25 +31,42 @@ h1 {
       "Cookie Cookie Cookie-tab"
       "Cookie Cookie Cookie-tab";
       height: 100vh;
-  }
-  
+}
 .Cookie-tab { 
-grid-area: Cookie-tab; 
-background: url("../bilder/bgV2_dark.png");
-border-left: 10px solid;}
-
-.Cookie {
-display:flex;
-grid-area: Cookie;
-background:url("../bilder/bgV2.png");
-align-items: center;
-justify-content: center;
+    grid-area: Cookie-tab; 
+    background: url("../bilder/bgV2_dark.png");
+    border-left: 10px solid;
 }
 
-.Cookie h1 {
-    position:absolute;
-    width: calc(100% - 34%);    
-    top:0;
+.Cookie {
+    display:flex;
+    grid-area: Cookie;
+    background:url("../bilder/bgV2.png");
+    align-items: center;
+    justify-content: center;
+}
+.Cookie img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.clicks {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+    width: calc(100% - 33%);
+    height: auto;
+    top: 0;
     left:0;
+    background-color: black;
+}
+.clicks p {
+    margin-right: 10px;
+    color:rgb(255, 238, 238);
 }
 
