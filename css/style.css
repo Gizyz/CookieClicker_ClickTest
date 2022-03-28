@@ -69,4 +69,11 @@ h1 {
     margin-right: 10px;
     color:rgb(255, 238, 238);
 }
-
+.workerContainer {
+    padding: 10px;
+    background-color: beige;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
