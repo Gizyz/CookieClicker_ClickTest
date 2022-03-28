@@ -1,0 +1,14 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+body {
+    background-image: url("bilder\bg.png");
+    background-repeat: repeat;
+}
+img {
+    width: 500px;
+}
+.menubar {
+    height: 100vh;
+}
