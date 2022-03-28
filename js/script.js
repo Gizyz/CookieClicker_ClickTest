@@ -3,7 +3,16 @@ var cookiesEl = document.getElementById("cookies");
 var cpsEl = document.getElementById("cps");
 
 var oldClick = 0;
+
+//Cookies
 var cookieAmount = 0;
+
+//Workers
+var clicker = 0;
+
+
+
+
 
 cookie.addEventListener('click', clicker);
 setInterval(function (){cps = 0;cpsEl.innerHTML = cps + " cps"}, 2000);
@@ -20,4 +29,7 @@ function clicksPerSecond() {
     oldClick = newClick;
   
     cpsEl.innerHTML = cps + " cps"
+}
+function clicker() {
+
 }

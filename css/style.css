@@ -5,12 +5,10 @@ html, body {
 img {
     width: 500px;
 }
-h1 {
-    margin:0;
-    padding: 10px;
-    color:rgb(255, 238, 238);
-    background-color: black;
+img:active{
+    width:530px;
 }
+
 .menubar {
     position: absolute;
     height: 100vh;
@@ -37,7 +35,18 @@ h1 {
     background: url("../bilder/bgV2_dark.png");
     border-left: 10px solid;
 }
-
+.Cookie-tab h1 {
+    margin: 0;
+    padding: 10px;
+    color:rgb(255, 238, 238);
+    background-color: black;
+}
+.Cookie h1 {
+    margin:0;
+    padding: 10px;
+    color:rgb(255, 238, 238);
+    background-color: black;
+}
 .Cookie {
     display:flex;
     grid-area: Cookie;
@@ -45,13 +54,7 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.Cookie img {
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
+
 .clicks {
     position: absolute;
     display: flex;
@@ -76,4 +79,21 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
+}
+.workerContainer:hover {
+    background-color: rgba(245, 245, 220, 0.783);
+}
+.workerContainer h1 {
+    margin:0;
+    padding: 10px;
+    color:black;
+    background-color: rgba(240, 248, 255, 0);
+}
+.unselectable {
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
