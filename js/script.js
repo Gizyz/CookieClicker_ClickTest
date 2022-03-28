@@ -47,7 +47,7 @@ function createWorkers() {
       i +
       "Cost'>" +
       workers[i].cost +
-      " cookies</p>" +
+      " happiness</p>" +
       "</div>" +
       "<p id='worker" +
       i +
@@ -101,14 +101,16 @@ function clicksPerSecond() {
 }
 
 function cookieDisplay() {
-  cookiesEl.innerHTML = cookieAmount.toFixed(1) + " cookies";
+  cookiesEl.innerHTML = cookieAmount.toFixed(1) + " happiness";
   cpsEl.innerHTML = cps + " cps";
 
   for (i = 0; i < workers.length; i++) {
-    workerAmountEl[i].innerHTML = workers[i].amount;
     console.log(workerAmountEl[i]);
-    workerCostEl[i].innerHTML = workers[i].cost + " cookies";
-    console.log("cost: " + workers[i].cost);
+    console.log(workerCostEl[i]);
+    console.log("happiness: " + workers[i].cost);
     console.log(i);
+
+    workerAmountEl[i].innerHTML = workers[i].amount;
+    workerCostEl[i].innerHTML = workers[i].cost + " happiness";
   }
 }
