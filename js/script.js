@@ -22,6 +22,8 @@ const workers = [
   { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
   { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
   { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
 ];
 
 cookieEl.addEventListener("click", clicker);
@@ -33,19 +35,9 @@ createWorkers();
 function createWorkers() {
   for (i = 0; i < workers.length; i++) {
     upgradeTabEl.innerHTML +=
-      "<div id='worker" +
-      i +
-      "'" +
-      "class='workerContainer' onclick='workerClickEvent(" +
-      i +
-      ")'>" +
-      "<div>" +
-      "<h1>" +
-      workers[i].name +
-      "</h1>" +
-      "<p id='worker" +
-      i +
-      "Cost'>" +
+      "<div id='worker" + i +"' class='workerContainer' onclick='workerClickEvent(" +i+")'>" +
+      "<div><h1>" +workers[i].name+"</h1>" +
+      "<p id='worker"+i+"Cost'>" +
       workers[i].cost +
       " happiness</p>" +
       "</div>" +
@@ -56,12 +48,20 @@ function createWorkers() {
       "</p>" +
       "</div>";
 
+    var workerEl = document.createElement("div");
+    var workerDivEl = document.createElement("div");
+    var workerNameEl = document.createElement("h1");
+    var workerCostEl = document.createElement("p");
+    workerNameEl.appendChild("workerDiv");
+    workerCostEl.appendChild("workerDiv");
+
     workerEl[i] = document.getElementById("worker" + i);
     workerCostEl[i] = document.getElementById("worker" + i + "Cost");
     workerAmountEl[i] = document.getElementById("worker" + i + "Amount");
   }
 }
 function workerClickEvent(i) {
+  console.log(i)
   console.log("Button: " + i);
   if (cookieAmount >= workers[i].cost) {
     cookieAmount -= workers[i].cost;

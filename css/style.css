@@ -3,10 +3,10 @@ html, body {
     padding:0;
 }
 img {
-    width: 500px;
+    width: 400px;
 }
 img:active{
-    width:530px;
+    width:430px;
 }
 
 .menubar {
@@ -56,6 +56,9 @@ img:active{
     background:url("../bilder/bgV2.png");
     align-items: center;
     justify-content: center;
+}
+.spacing {
+    height: 50px;
 }
 
 .clicks {
