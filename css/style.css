@@ -6,7 +6,9 @@ img {
     width: 400px;
 }
 img:active{
-    width:430px;
+    height:600px;
+
+    width:200px;
 }
 
 .menubar {

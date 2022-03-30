@@ -16,60 +16,55 @@ var workerCostEl = [];
 var workerAmountEl = [];
 
 const workers = [
-  { name: "Clicker", cost: 10, amount: 0, clicks: 0.2 },
-  { name: "Click mamas", cost: 100, amount: 0, clicks: 5 },
-  { name: "Click mamamas", cost: 500, amount: 0, clicks: 50 },
-  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Super Clickers", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Bill", cost: 10, amount: 0, clicks: 0.2 },
+  { name: "Average Joe", cost: 100, amount: 0, clicks: 5 },
+  { name: "Bob", cost: 500, amount: 0, clicks: 50 },
+  { name: "Manager Nelson", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Managing manager Dobin", cost: 1500, amount: 0, clicks: 200 },
+  { name: "CEO Koblan", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Leader Vaslab", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Supreme leader Kim Jong-un", cost: 1500, amount: 0, clicks: 200 },
 ];
+
+
+//Initialize
+ 
+for (i = 0; i < workers.length; i++) {
+  createWorkers(workers[i].name, workers[i].cost, workers[i].amount);
+}
 
 cookieEl.addEventListener("click", clicker);
 
-//Initialize
-createWorkers();
 
 //Creates elements for all worker objects in workers array
-function createWorkers() {
-  for (i = 0; i < workers.length; i++) {
-    upgradeTabEl.innerHTML +=
-      "<div id='worker" + i +"' class='workerContainer' onclick='workerClickEvent(" +i+")'>" +
-      "<div><h1>" +workers[i].name+"</h1>" +
-      "<p id='worker"+i+"Cost'>" +
-      workers[i].cost +
-      " happiness</p>" +
-      "</div>" +
-      "<p id='worker" +
-      i +
-      "Amount'>" +
-      workers[i].amount +
-      "</p>" +
-      "</div>";
+function createWorkers(name, cost, amount) {
+    // Gui elements
 
     var workerEl = document.createElement("div");
+    workerEl.className = 'workerContainer';
     var workerDivEl = document.createElement("div");
     var workerNameEl = document.createElement("h1");
+    console.log(workerNameEl)
+    workerNameEl.innerHTML = name;
     var workerCostEl = document.createElement("p");
-    workerNameEl.appendChild("workerDiv");
-    workerCostEl.appendChild("workerDiv");
+    workerCostEl.innerHTML = cost;
+    var workerAmountEl = document.createElement("p");
+    workerAmountEl.innerHTML = amount;
+    console.log(workerAmountEl)
 
-    workerEl[i] = document.getElementById("worker" + i);
-    workerCostEl[i] = document.getElementById("worker" + i + "Cost");
-    workerAmountEl[i] = document.getElementById("worker" + i + "Amount");
-  }
-}
-function workerClickEvent(i) {
-  console.log(i)
-  console.log("Button: " + i);
-  if (cookieAmount >= workers[i].cost) {
-    cookieAmount -= workers[i].cost;
-    workers[i].amount++;
+    workerDivEl.appendChild(workerNameEl);
+    workerDivEl.appendChild(workerCostEl);
+    workerEl.append(workerDivEl);
+    workerEl.appendChild(workerAmountEl);
+    upgradeTabEl.appendChild(workerEl);
+    // data values
 
-    workers[i].cost += Math.floor(0.5 * workers[i].amount);
-  }
-  cookieDisplay();
+
+    workerEl.amountEl = workerAmountEl;
+    workerEl.costEl = workerCostEl;
+
+    workerEl.addEventListener("click", workerUpgrade);
+
 }
 
 //cps reset
@@ -103,14 +98,25 @@ function clicksPerSecond() {
 function cookieDisplay() {
   cookiesEl.innerHTML = cookieAmount.toFixed(1) + " happiness";
   cpsEl.innerHTML = cps + " cps";
+}
+function workerUpgrade(e){
+    var buttonIndex = (Array.prototype.indexOf.call(this.parentElement.children, this)) - 2;
+    //console.log(buttonIndex);
+    
+    // can you afford it?
+    if (cookieAmount >= workers[buttonIndex].cost) {
+      cookieAmount -= workers[buttonIndex].cost;
+      workers[buttonIndex].amount++;
+      console.log(workers[buttonIndex].amount)
+      //Cost increase
+      workers[buttonIndex].cost += Math.floor(0.5 * workers[buttonIndex].amount);
+      cookieDisplay()
+    }
 
-  for (i = 0; i < workers.length; i++) {
-    console.log(workerAmountEl[i]);
-    console.log(workerCostEl[i]);
-    console.log("happiness: " + workers[i].cost);
-    console.log(i);
+    e.currentTarget.costEl.innerHTML = workers[buttonIndex].cost;
+    console.log("Cost: " + workers[buttonIndex].cost);
+    e.currentTarget.amountEl.innerHTML = workers[buttonIndex].amount;
+    console.log(workers[buttonIndex].amount);
 
-    workerAmountEl[i].innerHTML = workers[i].amount;
-    workerCostEl[i].innerHTML = workers[i].cost + " happiness";
-  }
+
 }
