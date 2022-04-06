@@ -16,14 +16,14 @@ var workerCostEl = [];
 var workerAmountEl = [];
 
 const workers = [
-  { name: "Bill", cost: 10, amount: 0, clicks: 0.2 },
-  { name: "Average Joe", cost: 100, amount: 0, clicks: 5 },
-  { name: "Bob", cost: 500, amount: 0, clicks: 50 },
-  { name: "Manager Nelson", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Managing manager Dobin", cost: 1500, amount: 0, clicks: 200 },
-  { name: "CEO Koblan", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Leader Vaslab", cost: 1500, amount: 0, clicks: 200 },
-  { name: "Supreme leader Kim Jong-un", cost: 1500, amount: 0, clicks: 200 },
+  { name: "Bill", cost: 10, amount: 0, clicks: 0.1 },
+  { name: "Average Joe", cost: 100, amount: 0, clicks: 1 },
+  { name: "Bob", cost: 1000, amount: 0, clicks: 10 },
+  { name: "Manager Nelson", cost: 10000, amount: 0, clicks: 100 },
+  { name: "Managing manager Dobin", cost: 5000, amount: 0, clicks: 1000 },
+  { name: "CEO Koblan", cost: 10000, amount: 0, clicks: 10000 },
+  { name: "Leader Vaslab", cost: 25000, amount: 0, clicks: 100000 },
+  { name: "Cat Budha", cost: 100000, amount: 0, clicks: 1000000 },
 ];
 
 
@@ -57,8 +57,8 @@ function createWorkers(name, cost, amount) {
     workerEl.append(workerDivEl);
     workerEl.appendChild(workerAmountEl);
     upgradeTabEl.appendChild(workerEl);
-    // data values
 
+    // data values
 
     workerEl.amountEl = workerAmountEl;
     workerEl.costEl = workerCostEl;

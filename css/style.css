@@ -86,7 +86,7 @@ img:active{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
     align-items: center;
 }
 .workerContainer:hover {
@@ -94,9 +94,11 @@ img:active{
 }
 .workerContainer h1 {
     margin:0;
-    padding: 10px;
     color:black;
     background-color: rgba(240, 248, 255, 0);
+}
+.workerContainer div {
+    padding-left: 10px;
 }
 .unselectable {
     -webkit-user-drag: none;
@@ -104,4 +106,7 @@ img:active{
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+.upgradeTab {
+    display: none;
 }
